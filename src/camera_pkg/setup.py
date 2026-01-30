@@ -19,7 +19,6 @@ data_files=[
     maintainer_email='isaac.peterson@usu.edu',
     description='TODO: Package description',
     license='TODO: License declaration',
-    tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'perception = camera_pkg.perception:main',
