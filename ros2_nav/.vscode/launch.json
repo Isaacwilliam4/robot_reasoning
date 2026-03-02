@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Perception Node",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/camera_pkg/camera_pkg/perception.py",
+            "console": "integratedTerminal",
+            "python": "${command:python.interpreterPath}",
+            "env": {
+                "PYTHONUNBUFFERED": "1"
+            }
+        },
+        {
+            "name": "Debug Control Node",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/camera_pkg/camera_pkg/control.py",
+            "console": "integratedTerminal",
+            "python": "${command:python.interpreterPath}",
+            "env": {
+                "PYTHONUNBUFFERED": "1"
+            }
+        }
+    ]
+}
