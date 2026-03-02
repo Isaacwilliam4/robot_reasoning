@@ -44,7 +44,7 @@ class ControlNode(Node):
             cmd.angular.z = 0.5   # turn left
         elif self.current_obstacle == 'straight':
             cmd.angular.z = 0.0
-            cmd.linear.x = 0.5    # slow down
+            cmd.linear.x = 10.    # slow down
 
         self.cmd_pub.publish(cmd)
 

@@ -22,7 +22,7 @@ class PerceptionNode(Node):
         self.obstacle_pub = self.create_publisher(String, '/obstacle_direction', 10)
 
         # Depth threshold
-        self.block_threshold = 1.0  # meters
+        self.block_threshold = 5.0  # meters
 
     def depth_callback(self, msg: Image):
         try:
@@ -36,9 +36,9 @@ class PerceptionNode(Node):
         h, w = depth_image.shape
 
         # Split left, center, right
-        left = depth_image[:, :w//3]
-        center = depth_image[:, w//3:2*w//3]
-        right = depth_image[:, 2*w//3:]
+        left = depth_image[:, :w//4]
+        center = depth_image[:, w//4:2*w//4]
+        right = depth_image[:, -w//4:]
 
         left_block = np.sum(left < self.block_threshold)
         center_block = np.sum(center < self.block_threshold)
